@@ -59,24 +59,64 @@ var jane = Object.create(personProto, {
     job: {value: "Designer"}
 });
 
-*/
+
 
 //Primitives vs Objects
 
+var years = [1990, 1991, 1992, 1993, 1994];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+
+
+function interviewQuestion(job) {
+    if (job === "designer") {
+        return function(name) {
+            console.log(name + ", can you please explain what UX design is?");
+        }
+    }else if(job === "teacher") {
+        return function(name) {
+            console.log(name + ", what subject do you teach?");
+        }
+    }else{
+        return function(name) {
+            console.log(name + ", what do you do?");
+        }
+    }
+}
+
+var teacherQuestion = interviewQuestion("teacher");
+
+teacherQuestion("John");
 
 
 
 
 
+function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game();
 
+*/
 
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2019 - yearOfBirth;
+        console.log((retirementAge - age) + a)
+    }
+}
 
-
-
-
-
-
-
+var retirementUS = retirement(66);
+retirementUS(1990);
 
 
 
