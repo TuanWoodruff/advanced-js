@@ -105,7 +105,7 @@ function game() {
 }
 game();
 
-*/
+
 
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
@@ -118,7 +118,7 @@ function retirement(retirementAge) {
 var retirementUS = retirement(66);
 retirementUS(1990);
 
-
+*/
 
 
 
